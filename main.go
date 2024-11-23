@@ -23,5 +23,11 @@ func main() {
 			"message": "List User",
 		})
 	})
+	r.GET("/api/v1/list-user/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.JSON(http.StatusOK, gin.H{
+			"message": "List User By ID + " + id,
+		})
+	})
 	r.Run(":3000")
 }
